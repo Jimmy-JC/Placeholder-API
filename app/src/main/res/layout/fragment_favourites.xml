@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.favourites.FavouritesFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:background="@color/white"
+            android:id="@+id/favourite_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:photosList="@{photos}"
+            app:photoCheckListener="@{photoCheckListener}"/>
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/not_found"
+            android:src="@drawable/empty_album"
+            android:layout_width="250dp"
+            android:layout_height="250dp"/>
+
+    </RelativeLayout>
+
+    <data>
+        <import type="java.util.List"/>
+        <import type="jimmy.placeholder_api.data.model.Photo"/>
+        <import type="jimmy.placeholder_api.ui.photos.PhotoCheckedListener"/>
+
+        <variable
+            name="photos"
+            type="List&lt;Photo>" />
+
+        <variable
+            name="photoCheckListener"
+            type="PhotoCheckedListener" />
+    </data>
+</layout>

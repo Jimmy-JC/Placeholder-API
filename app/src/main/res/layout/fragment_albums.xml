@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.albums.AlbumsFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/albums_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:albumsList="@{albums}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </FrameLayout>
+
+    <data>
+        <import type="java.util.List" />
+        <import type="jimmy.placeholder_api.data.model.Album" />
+
+        <variable
+            name="albums"
+            type="List&lt;Album>" />
+    </data>
+</layout>
